@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.display-none {
+  display: none;
+}
+.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.display-block {
+  display: block;
+}
+
+.w-100 {
+  width: 100%;
+}
+.pad-5px {
+  padding: 5px;
+}
+
+.align-left {
+  text-align: left;
+}
+.pad-bot-8px {
+  padding-bottom: 8px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+.item-center {
+  align-items: center;
+}

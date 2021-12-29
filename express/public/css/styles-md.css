@@ -1,0 +1,102 @@
+/*Laptops min width 768px */
+
+.display-flex-sm a {
+  font-size: 13px;
+  padding: 10px 20px;
+}
+
+/*footer*/
+
+.f-footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.f-primero {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.f-cuarto {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.f-contacto {
+  width: 50%;
+}
+
+.f-titulo {
+  width: 100%;
+}
+
+.f-info {
+  width: 50%;
+}
+
+.f-100 {
+  width: 100%;
+  padding: 4px;
+}
+
+.f-segundo {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.f-tercero {
+  width: 100%;
+  padding: 20px;
+}
+
+.f-info {
+  padding: 4px;
+}
+
+.f-contacto {
+  padding: 4px;
+}
+
+.f-links:hover {
+  color: black;
+}
+
+.f-links:hover {
+  color: #ffb700;
+}
+
+.f-links-social:hover {
+  color: black;
+}
+
+.img-content {
+  width: 40%;
+  padding-right: 2.5px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-seccion-center-md {
+  width: 60%;
+  padding-left: 2.5px;
+  margin-top: none !important;
+}
+.content-event-description {
+  margin-bottom: 0px;
+}
+
+.content-event-moreinformation {
+  margin-bottom: 0px;
+}
+
+.product-wrapper {
+  width: 25%;
+}

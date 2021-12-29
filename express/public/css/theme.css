@@ -1,0 +1,75 @@
+/* Colors ====================  */
+/*nuevos
+bkg= #333
+buttom yellow = #ffb700
+
+*/
+
+/*Suplementarios*/
+.t-grey-text {
+  color: #333;
+}
+.t-lb-text {
+  color: #4ea6bf;
+}
+.t-blue-text {
+  color: #094253;
+}
+.t-llb-text {
+  color: #5ce1e6;
+}
+.t-green-text {
+  color: #72d079;
+}
+.t-darkgreen-text {
+  color: #2f7934;
+}
+.t-violet-text {
+  color: #7980c6;
+}
+.t-darkviolet-text {
+  color: #29338d;
+}
+
+.t-grey-bg {
+  background-color: #333;
+}
+.s-gris {
+  background-color: #ececec;
+}
+
+.t-lb-bg {
+  background-color: #4ea6bf;
+}
+.t-blue-bg {
+  background-color: #094253;
+}
+.t-llb-bg {
+  background-color: #5ce1e6;
+}
+.t-green-bg {
+  background-color: #72d079;
+}
+.t-darkgreen-bg {
+  background-color: #2f7934;
+}
+.t-violet-bg {
+  background-color: #7980c6;
+}
+.t-darkviolet-bg {
+  background-color: #29338d;
+}
+
+/*Complemantario*/
+.t-darkrgold-text {
+  color: #998550;
+}
+.t-darkgold-bg {
+  background-color: #998550;
+}
+
+/*Font Family*/
+body {
+  font-family: Helvetica;
+  font-size: 12px;
+}

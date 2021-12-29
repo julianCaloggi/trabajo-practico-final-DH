@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head")%>
+    <title>Producto del carrito</title>
+  </head>
+  <body>
+    <!-- encabezado de la pagina -->
+    <%- include("../partials/header")%>
+    <!--Falta convertir los p a ejs con la data de la base-->
+    <main>
+      <section class="carrit-tickets">
+        <div class="product-title pad-5px">
+          <h2>¡Comprando!</h2>
+        </div>
+        <div class="display-flex pad-5px">
+          <div class="ticket-carrit">
+            <h3>Ticket</h3>
+            <p>Participante</p>
+          </div>
+          <div class="price-carrit">
+            <h3>Precio</h3>
+            <p>$300</p>
+          </div>
+          <div class="cantidad-carrit">
+            <form action="/">
+              <label for="cantidad" class="display-block"
+                ><h3>Cantidad</h3></label
+              >
+              <select name="cantidad" id="cantidad" class="selector-carrito">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="temporizador-cart product-title pad-5px">
+          <i class="far fa-clock"></i
+          ><span>Temporizador para que finalice su compra</span>
+        </div>
+      </section>
+      <section class="data-carrit">
+        <h3 class="product-title pad-5px">Datos necesarios para la compra</h3>
+        <div class="form-content">
+          <form action="/">
+            <div class="pad-5px">
+              <label for="nombre">Nombre y Apellido</label>
+              <input type="text" name="nombre" id="nombre" />
+            </div>
+            <div class="pad-5px">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="pad-5px">
+              <label for="telefono">Celular</label>
+              <input type="tel" name="telefono" id="telefono" />
+            </div>
+            <div class="pad-5px">
+              <label for="dni">DNI</label>
+              <input type="text" name="dni" id="dni" />
+            </div>
+          </form>
+        </div>
+      </section>
+      <section>
+        <div class="product-title warning-carrit">
+          <i class="fas fa-exclamation"></i>
+          <p>
+            Por favor, revise los datos antes de continuar el proceso de compra
+          </p>
+        </div>
+      </section>
+      <section class="data-carrit">
+        <h3 class="product-title pad-5px">Seleccioná tu Forma de Pago</h3>
+        <div class="pad-5px">
+          <form action="/">
+            <div class="pad-5px display-flex">
+              <input type="radio" name="medio-de-pago" value="c-d" />
+              <label for="medio-de-pago" class="pad-5px"
+                >Pago con Tarjeta Débito/credito</label
+              >
+            </div>
+            <div class="pad-5px display-flex">
+              <input type="radio" name="medio-de-pago" value="MP" />
+              <label for="medio-de-pago" class="pad-5px"
+                >Pago con Créd / Déb / Cuotas – MercadoPago</label
+              >
+            </div>
+            <div class="pad-5px display-flex">
+              <input type="radio" name="medio-de-pago" value="PP" />
+              <label for="medio-de-pago" class="pad-5px"
+                >International Payments - PayPal</label
+              >
+            </div>
+          </form>
+          <div class="pad-5px">
+            <span>Subtotal</span>
+            <span> $300.-</span>
+          </div>
+          <div class="pad-5px">
+            <span>Cargo por servicio</span>
+            <span>$25</span>
+          </div>
+          <div class="pad-5px">
+            <span>Total</span>
+            <span>$325</span>
+          </div>
+          <div class="pad-5px t-blue-text">
+            <span
+              >Por favor verificá tus datos antes de realizar la compra.</span
+            >
+          </div>
+        </div>
+        <!--No debreía ser un button debería ser un input type submit - ver mas adelante-->
+        <button class="buy-buttom buy-buttom-c">
+          <a href="/">Comprar </a>
+        </button>
+      </section>
+    </main>
+
+    <!-- pie de pagina -->
+    <%- include("../partials/footer")%>
+  </body>
+</html>

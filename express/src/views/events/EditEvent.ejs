@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../partials/head-createProduct")%>
+    <title>Edicion de un producto</title>
+    <script defer src="/JS/eventEditValidation.js"></script>
+</head>
+
+<body>
+  <!-- encabezado de la pagina -->
+  <%- include("../partials/header")%>
+
+    <section id="formulario">
+      <div class="imgbox">
+        <img src="/imagenes/Eventos/<%=event.banner%>" alt="" />
+      </div>
+
+      <div class="contentbx">
+        <div class="formbx">
+          <ul id="errors" class="hidden">
+          </ul>
+          <!-- ?_method=PUT -->
+          <form class="forms" action="/Evento/<%= event.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="inputbx">
+              <label for="">Nombre del evento: </label>
+              <input type="text" value="<%=event.event_name%>" name="event_name" id="event_name" />
+            </div>
+            <div class="inputbx">
+              <label for="">imagene del evento: </label>
+              <input type="file" name="banner" id="banner" />
+            </div>
+            <!-- mirar lineas ERROR-->
+            <div class="inputbx caja-options">
+              <select class="selectores" name="idProvince" id="idProvince">
+                <option value="">Provincia</option>
+
+                <% for (province of provinces){ %>
+                  <option value="<%=province.id%>">
+                    <%= province.province %>
+                  </option>
+                  <% } %>
+              </select>
+            </div>
+
+            <div class="inputbx caja-options">
+              <select class="selectores" name="idLocations" id="idLocations">
+                <option value="">localidades</option>
+
+                <% for (location of locations){ %>
+                  <option value="<%=location.id%>">
+                    <%= location.locations %>
+                  </option>
+                  <% } %>
+
+              </select>
+            </div>
+
+            <div class="inputbx">
+              <label for="">Direccion del evento: </label>
+              <input type="text" value="<%=event.event_address%>" name="event_address" id="event_address" />
+            </div>
+
+            <div class="inputbx">
+              <label for="">Fecha del evento: </label>
+              <input type="date" value="<%=event.event_date%>" name="event_date" id="event_date" />
+            </div>
+
+            <div class="inputbx">
+              <label for="">Hora de inicio: </label>
+              <input type="time" value="<%=event.start_time%>" name="start_time" id="start_time" />
+            </div>
+            <div class="inputbx">
+              <label for="">Hora de finalizacion: </label>
+              <input type="time" placeholder="Hora de finalizacion" value="<%=event.end_time%>" name="end_time"
+                id="end_time" />
+            </div>
+
+            <div class="inputbx">
+              <label for="">Precio de entrada: </label>
+              <input type="text" id="precio" name="price" value="<%=event.price%>" id="price" />
+            </div>
+
+            <div class="inputbx">
+              <label for="">Descripcion del evento: </label>
+              <textarea name="event_description" id="event_description" class="inputbx">
+<%= event.event_description %>
+              </textarea>
+            </div>
+
+            <div class="inputbx">
+              <label for="">Mas informacion: </label>
+              <input type="text" value="<%= event.more_info %>" name="more_info" id="more_info" />
+            </div>
+
+            <div class="inputbx">
+              <input type="submit" value="Guardar" />
+            </div>
+          </form>
+          <div class="inputbx">
+            <form class="forms" action="/Evento/<%= event.id %>?_method=DELETE" method="POST"
+              enctype=multipart/form-data>
+              <input type="submit" value="Eliminar Evento" />
+          </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- pie de pagina -->
+    <%- include("../partials/footer")%>
+</body>
+
+</html>

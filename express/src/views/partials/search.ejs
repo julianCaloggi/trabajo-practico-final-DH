@@ -1,0 +1,35 @@
+<div class="B-categoria">
+  <form action="/Evento/buscar" method="GET" class="buscador2">
+    <input
+      type="text"
+      name="event_name"
+      placeholder="Buscar un evento en Deporteando"
+    />
+    <select name="locations" id="locations">
+      <option value="">localidad</option>
+      <!-- Aplicar el For -->
+      <% for (event of events){ %>
+      <option value="<%=event.location.id%>">
+        <%= event.location.locations %>
+      </option>
+      <% } %>
+    </select>
+    <select name="event_date" id="mes">
+      <option value="">Por Mes.</option>
+      <option value="2021-08">Ago de 2021</option>
+      <option value="2021-09">Sep de 2021</option>
+      <option value="2021-10">Oct de 2021</option>
+      <option value="2021-11">Nov de 2021</option>
+      <option value="2021-12">Dic de 2021</option>
+      <option value="2022-01">Ene de 2022</option>
+      <option value="2022-02">Feb de 2022</option>
+      <option value="2022-03">Mar de 2022</option>
+      <option value="2022-04">Abr de 2022</option>
+      <option value="2022-05">May de 2022</option>
+      <option value="2022-06">Jun de 2022</option>
+      <option value="2023-03">Jul de 2022</option>
+      <option value="2022-06">Jul de 2027</option>
+    </select>
+    <button class="categori-buttom" type="submit">BUSCAR</button>
+  </form>
+</div>

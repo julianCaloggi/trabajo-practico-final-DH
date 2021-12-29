@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../partials/head-login")%>
+    <title>Registrate</title>
+    <script defer src="/JS/registerValidation.js"></script>
+</head>
+
+<body>
+  <section>
+    <div class="imgbox">
+      <img src="/imagenes/imagen-fondo-usuario-2.jpg" alt="" />
+    </div>
+
+    <div class="contentbx">
+      <div class="formbx">
+        <h2>Registrate</h2>
+
+        <div id="errores" class="hidden">
+        </div>
+
+        <form action="/Usuario/Registro" method="POST" enctype="multipart/form-data" class="reservation">
+          <div class="inputbx">
+            <span>Nombre</span>
+            <input type="text" name="first_name" id="first_name"
+              value="<%= locals.oldData ? oldData.first_name : null %>" />
+            <% if (locals.errors && errors.first_name) { %>
+              <div class="error-msg">
+                <%= errors.first_name.msg %>
+              </div>
+              <% } %>
+          </div>
+          <div class="inputbx">
+            <span>Apellido</span>
+            <input type="text" name="last_name" id="last_name"
+              value="<%= locals.oldData ? oldData.last_name : null %>" />
+            <% if (locals.errors && errors.last_name) { %>
+              <div class="error-msg">
+                <%= errors.last_name.msg %>
+              </div>
+              <% } %>
+          </div>
+          <div class="inputbx">
+            <span>Fecha de Nacimiento</span>
+            <input type="date" name="birth_date" id="birth_date"
+              value="<%= locals.oldData ? oldData.birth_date : null %>" />
+            <% if (locals.errors && errors.birth_date) { %>
+              <div class="error-msg">
+                <%= errors.birth_date.msg %>
+              </div>
+              <% } %>
+          </div>
+          <div class="inputbx">
+            <span>E-mail</span>
+            <input type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>" />
+            <% if (locals.errors && errors.email) { %>
+              <div class="error-msg">
+                <%= errors.email.msg %>
+              </div>
+              <% } %>
+          </div>
+          <div class="inputbx">
+            <span>Tipo de Usuario</span>
+            <div class="flexCheck">
+              <input type="checkbox" name="idCategorie" id="idCategorie" value="1" checked />
+              <label for="Participante">Participante</label>
+
+              <input type="checkbox" name="idCategorie" id="idCategorie" value="2" />
+              <label for="Organizador">Organizador</label>
+            </div>
+          </div>
+          <div class="inputbx">
+            <span>Avatar del perfil:</span>
+            <input type="file" name="avatar" id="avatar" accept="image/jpeg,image/png" />
+          </div>
+
+          <div class="inputbx">
+            <span>Contraseña</span>
+            <h4 class="recordatorio">*La contraseña debe tener un minimo de una letra mayuscula,numero y signo.</h4>
+            <input type="password" name="user_password" id="user_password" />
+            <% if (locals.errors && errors.user_password) { %>
+              <div class="error-msg">
+                <%= errors.user_password.msg %>
+              </div>
+              <% } %>
+          </div>
+
+          <div class="inputbx">
+            <span>Repita la contraseña</span>
+            <input type="password" name="Repeat_password" id="Repeat_password" />
+            <% if (locals.errors && errors.Repeat_password) { %>
+              <div class="error-msg">
+                <%= errors.Repeat_passwordmsg %>
+              </div>
+              <% } %>
+          </div>
+
+          <div class="inputbx">
+            <input type="submit" value="Aceptar" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

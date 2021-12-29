@@ -1,0 +1,22 @@
+.nameUser {
+  margin: 10px;
+}
+
+.inputProfileEdit {
+  overflow: visible;
+  border-radius: 5px;
+  background: #fff;
+  color: #000;
+  padding: 0 0 0 2%;
+  transition-duration: 0.3s;
+  width: 60%;
+  height: 25px;
+  border: 1px solid #959595;
+}
+
+form.contacto div {
+  margin: 1%;
+  overflow: hidden;
+  width: 50%;
+  float: left;
+}

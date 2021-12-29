@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  display: flex;
+}
+
+section .imgbox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(225deg, rgba(109, 19, 165, 0.4), #03a9f4);
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+
+section .imgbox {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+section .imgbox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section .contentbx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+}
+
+section .contentbx .formbx {
+  width: 50%;
+}
+
+section .contentbx .formbx h2 {
+  color: #ffb700;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #ffb700;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+section .contentbx .formbx .inputbx {
+  margin-bottom: 10px;
+}
+
+section .contentbx .formbx .inputbx span {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: #ffb700;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+section .contentbx .formbx .inputbx input {
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid #ffb700;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #ffb700;
+  background: transparent;
+  border-radius: 30px;
+}
+
+section .contentbx .formbx .inputbx input[type="submit"] {
+  background: #ffb700;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+section .contentbx .formbx .inputbx input[type="submit"]:hover {
+  background: #f53677;
+}
+
+section .contentbx .formbx .remember {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+section .contentbx .formbx .inputbx p {
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+section .contentbx .formbx .inputbx p a {
+  color: #ffb700;
+}
+
+@media (max-width: 768px) {
+  section .imgbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  section .contentbx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.8;
+  }
+  section .contentbx .formbx {
+    width: 100%;
+    padding: 40px;
+    background: rgb(255, 255, 255/0.9);
+    margin: 50px;
+  }
+}
+
+.flexCheck {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flexCheck label {
+  display: block;
+  margin: 2px -2px;
+  font-size: 16px;
+  color: #ffb700;
+  padding-left: 5px;
+}
+.flexCheck input {
+  display: block;
+  width: 10% !important;
+  padding: 5px 0px;
+  margin: 5px 0px;
+}
+
+.error-msg {
+  color: red;
+}
+
+.recordatorio {
+  font-size: 12px;
+  color: red;
+  padding: 0px 0px 7px 1px;
+}

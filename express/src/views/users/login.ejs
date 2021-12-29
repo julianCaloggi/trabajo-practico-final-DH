@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../partials/head-login")%>
+
+    <title>Ingresar</title>
+    <script defer src="/JS/loginValidation.js"></script>
+</head>
+
+<body>
+  <section>
+    <div class="imgbox">
+      <img src="/imagenes/imagen-fondo-usuario.jpg" alt="" />
+    </div>
+
+    <div class="contentbx">
+      <div class="formbx">
+        <h2>Iniciar Sesión</h2>
+        <div id="errores" class="hidden">
+        </div>
+        <form action="/Usuario/Login" method="POST" class="formu">
+          <div class="inputbx">
+            <span>Email de Usuario</span>
+            <input type="text" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>" />
+            <% if (locals.errors && errors.email) { %>
+              <div class="error-msg">
+                <%= errors.email.msg %>
+              </div>
+              <% } %>
+          </div>
+
+          <div class="inputbx">
+            <span>Contraseña</span>
+            <input type="password" name="user_password" id="user_password" />
+            <% if (locals.errors && errors.user_password) { %>
+              <div class="error-msg">
+                <%= errors.user_password.msg %>
+              </div>
+              <% } %>
+          </div>
+
+          <div class="remember">
+            <label for="">
+              <input type="checkbox" name="remember" id="remember" />Recordar</label>
+          </div>
+
+          <div class="inputbx">
+            <input type="submit" value="Aceptar" />
+          </div>
+
+          <div class="inputbx">
+            <p>No tienes cuenta ve <a href="/Usuario/Registro"> Aqui</a></p>
+            <p>No recuerdad tu contraseña? <a href="#"> Aprieta aqui</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

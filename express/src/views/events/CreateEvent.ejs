@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../partials/head-createProduct")%>
+    <title>Creacion de un producto</title>
+    <script defer src="/JS/eventAddValidation.js"></script>
+</head>
+
+<body>
+  <!-- encabezado de la pagina -->
+  <%- include("../partials/header")%>
+
+    <section id="formulario">
+      <div class="imgbox">
+        <img src="/imagenes/banner-registro.jpg" alt="" />
+      </div>
+
+      <div class="contentbx">
+        <div class="formbx">
+          <ul id="errors" class="hidden">
+            Lista de errores:
+          </ul>
+          <form class="forms" action="/Evento" method="POST" enctype="multipart/form-data">
+            <div class="inputbx">
+              <input type="text" placeholder="Nombre del evento" name="event_name" id="event_name"
+                value="<%= locals.oldData ? oldData.event_name: null %>" />
+              <% if (locals.errors && errors.event_name) { %>
+                <div class="error-msg">
+                  <%= errors.event_name.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="inputbx caja-options">
+              <select class="selectores" name="idProvince" id="idProvince">
+                <option value="<%= locals.oldData ? oldData.province : null %>">
+                  Provincia
+                </option>
+                <!-- Aplicar el For -->
+                <% for (province of provinces){ %>
+                  <option value="<%= province.id %>">
+                    <%= province.province %>
+                  </option>
+                  <% } %>
+              </select>
+            </div>
+
+            <div class="inputbx caja-options">
+              <select class="selectores" name="idLocations" id="idLocations">
+                <option value="<%= locals.oldData ? oldData.locations : null %>">
+                  Localidad
+                </option>
+
+                <% for (location of locations){ %>
+                  <option value="<%=location.id%>">
+                    <%= location.locations %>
+                  </option>
+                  <% } %>
+              </select>
+            </div>
+
+            <div class="inputbx">
+              <input type="text" placeholder="Dirección" name="event_address" id="event_address"
+                value="<%= locals.oldData ? oldData.event_address : null %>" />
+              <% if (locals.errors && errors.event_address) { %>
+                <div class="error-msg">
+                  <%= errors.event_address.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="inputbx">
+              <input type="date" placeholder="Fecha del Evento" value="22/08/2022" name="event_date" id="event_date"
+                value="<%= locals.oldData ? oldData.event_date : null %>" />
+              <% if (locals.errors && errors.event_date) { %>
+                <div class="error-msg">
+                  <%= errors.event_date.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="inputbx">
+              <input type="time" value="11:30" name="start_time" id="start_time"
+                value="<%= locals.oldData ? oldData.start_time : null %>" />
+              <% if (locals.errors && errors.start_time) { %>
+                <div class="error-msg">
+                  <%= errors.start_time.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="inputbx">
+              <input type="time" placeholder="Hora de finalizacion" value="14:30" name="end_time" id="end_time"
+                value="<%= locals.oldData ? oldData.end_time : null %>" />
+              <% if (locals.errors && errors.end_time) { %>
+                <div class="error-msg">
+                  <%= errors.end_time.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="inputbx">
+              <input type="number" placeholder="Precio de entrada" name="price" id="price"
+                value="<%= locals.oldData ? oldData.price : null %>" />
+              <% if (locals.errors && errors.price) { %>
+                <div class="error-msg">
+                  <%= errors.price.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="inputbx">
+              <textarea placeholder="Descripcion del evento" name="event_description" id="event_description"
+                class="inputbx" value="<%= locals.oldData ? oldData.event_description : null %>"></textarea>
+              <% if (locals.errors && errors.event_description) { %>
+                <div class="error-msg">
+                  <%= errors.event_description.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="inputbx">
+              <input type="text" placeholder="Mas informacion" name="more_info" id="more_info"
+                value="<%= locals.oldData ? oldData.more_info : null %>" />
+              <% if (locals.errors && errors.more_info) { %>
+                <div class="error-msg">
+                  <%= errors.more_info.msg %>
+                </div>
+                <% } %>
+            </div>
+
+            <div class="inputbx">
+              <label class="main-label">Imagen del evento:</label>
+              <input type="file" name="banner" id="banner" accept="image/jpeg,image/png" />
+            </div>
+
+            <div class="inputbx">
+              <input type="submit" value="Crear Eevento" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- pie de pagina -->
+    <%- include("../partials/footer")%>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+/*Tablets Min Width 480px*/
+
+.h-contenedor-logo {
+  width: 26%;
+
+  text-align: left;
+}
+
+.h-content-nav-sm {
+  display: block;
+  width: 74%;
+}
+
+.display-flex-sm {
+  display: flex;
+  margin-top: 10px;
+  text-decoration: none;
+  width: 100%;
+}
+.display-flex-sm ul {
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+  padding-right: 15px;
+  justify-content: flex-end;
+}
+.display-flex-sm a {
+  text-decoration: none;
+  color: #ffff;
+  font-size: 81%;
+  width: auto;
+  white-space: nowrap;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px 10px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+.display-flex-sm img {
+  width: 2em;
+  text-align: center;
+}
+
+.display-flex-sm a:hover {
+  color: #ffb700;
+}
+.boton-menu {
+  border: #fff 1px solid;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50px;
+}
+.boton-menu:hover {
+  border: #ffb700 1px solid;
+  color: #ffb700;
+}
+
+.display-none-sm {
+  display: none;
+  width: 100%;
+}
+
+/*Producto*/
+
+.content-event-description {
+  width: 49%;
+  margin-right: 2%;
+}
+
+.content-event-moreinformation {
+  width: 49%;
+}
+/* imagen evento */
+
+.product-wrapper {
+  width: 50%;
+}

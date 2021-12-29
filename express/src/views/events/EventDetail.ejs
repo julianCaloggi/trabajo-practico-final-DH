@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("../partials/head")%>
+    <title>Detalle del producto</title>
+</head>
+
+<body>
+  <!-- encabezado de la pagina -->
+  <%- include("../partials/header")%>
+
+    <main class="main">
+      <img src="/imagenes/Eventos/<%=event.banner%>" alt="running-cba" class="img-content" />
+      <section class="main-seccion-center-md">
+        <div class="edit-contenedor">
+          <button class="edit-buttom"><a href="/Evento/<%=event.id%>/editar">Editar Evento</a></button>
+        </div>
+        <div class="content-event-general">
+          <p class="product-title pad-5px"><%=event.event_name%></p>
+          <p> <!--Aca muestro la Location-->
+            <i class="fas fa-map-marker"></i>
+            <%=event.location.locations%>
+          </p>
+          <p><!--Aca muestro la Province-->
+            <i class="fas fa-map-marker"></i>
+          <%= event.location.province.province%> 
+          </p>
+          <p>
+            <i class="fas fa-map-marker"></i>
+            <%=event.event_address%>
+          </p>
+          <p><i class="fas fa-calendar-alt"></i><%=event.event_date%></p>
+          <p><i class="far fa-clock"></i><%=event.start_time%></p>
+          <p><i class="far fa-clock"></i><%=event.end_time%></p>
+        </div>
+        <div class="content-event-price">
+          <div class="price-contenedor">
+            <p></i>$<%=event.price%></p>
+          </div>
+          <button class="buy-buttom">
+            <a href="/Evento/Carrito/<%=event.id%>">
+            <i class="fas fa-ticket-alt ticket"></i>Comprar
+          </a>
+        </button>
+        </div>
+        <div class="content-event-ubication">
+          <p class="product-title pad-5px align-left">Ubicación</p>
+          <img src="/imagenes/ubication-map.jpg" alt="ubication-map" class="w-100" />
+        </div>
+        <div class="display-flex">
+          <div class="content-event-description">
+            <p class="product-title pad-5px align-left">
+              Descripción del evento
+            </p>
+            <p class="description-style"><%=event.event_description%></p>
+          </div>
+          <div class="content-event-moreinformation">
+            <p class="product-title pad-5px align-left">Más Información</p>
+            <p class="description-style"><%=event.more_info%></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- pie de pagina -->
+    <%- include("../partials/footer")%>
+</body>
+
+</html>

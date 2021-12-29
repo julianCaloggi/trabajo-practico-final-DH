@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("partials/head")%>
+    <title>Deporteando</title>
+</head>
+
+<body>
+  <!-- encabezado de la pagina -->
+  <%- include("partials/header")%>
+
+    <!-- carrusel de la pagina -->
+    <%- include("partials/banner")%>
+
+      <!-- productos de la pagina -->
+      <%- include("partials/search")%>
+
+        <main>
+          <section class="B-muestra-ticket display-flex">
+            <% for (event of events){%>
+
+              <a href="/Evento/<%=event.id%>">
+                <div class="product-wrapper">
+                  <article class="product">
+                    <img class="product-img" src="/imagenes/Eventos/<%=event.banner%>" alt="" width="100%" />
+
+                    <div class="product-content">
+                      <h3>
+                        <%=event.event_name%>
+                      </h3>
+                      <p>
+                        <%=event.location.province.province%>
+                      </p>
+                      <p>
+                        <%=event.location.locations%>
+                      </p> $ <%=event.price%>
+              </a>
+              <button class="m-botton-compra">
+                <a href="/Evento/Carrito/<%=event.id%>"><i class="fas fa-ticket-alt ticket"></i>Comprar</a>
+              </button>
+              </div>
+              </article>
+              </div>
+
+              <% } %>
+                <!-- pie de pagina -->
+                <%- include("partials/footer")%>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/css/passwordEdit.css" />
+  <link rel="stylesheet" href="/css/editProfile.css" />
+  <%- include("../partials/head")%>
+    <title>Cambia tu contraseña</title>
+</head>
+
+<body>
+  <!-- encabezado de la pagina -->
+  <%- include("../partials/header")%>
+    <div class="wrap">
+      <section class="contenedor cont-loginprofile">
+        <h1 class="nameUser">
+          Edita tus datos
+          <strong>
+            <%=user.first_name + " " + user.last_name%>
+          </strong>!
+        </h1>
+        <article>
+          <form action="/Usuario/Editar/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
+            id="edit" name="edit" class="contacto">
+            <div class="div-50">
+              <label for="first_name" class="t-ubicacion">Nombre</label>
+              <input class="inputProfileEdit" type="text" size="50" name="first_name" id="first_name"
+                value="<%= user.first_name %> " />
+            </div>
+            <div class="div-50">
+              <label for="last_name" class="t-ubicacion">Apellido</label>
+              <input class="inputProfileEdit" type="text" size="50" name="last_name" id="last_name"
+                value="<%= user.last_name %> " />
+            </div>
+            <div class="div-50">
+              <label for="email" class="t-ubicacion">email</label>
+              <input class="inputProfileEdit" type="email" size="50" name="email" id="email"
+                value="<%= user.email %> " />
+            </div>
+            <div class="div-50">
+              <label for="birth_date" class="t-ubicacion">Fecha de Nacimiento</label>
+              <input class="inputProfileEdit" type="date" size="50" name="birth_date" id="birth_date"
+                value="<%= user.birth_date %> " />
+            </div>
+            <div class="div-50">
+              <label for="idCategorie" class="t-ubicacion">Tipo de Usuario</label>
+              <div class="div-100">
+                <div class="div-50">
+                  <input class="inputProfileEdit" type="checkbox" name="idCategorie" id="idCategorie" value="1"
+                    checked />
+                  <label for="Participante">Participante</label>
+                </div>
+                <div class="div-50">
+                  <input class="inputProfileEdit" type="checkbox" name="idCategorie" id="idCategorie" value="2" />
+                  <label for="Organizador">Organizador</label>
+                </div>
+              </div>
+            </div>
+            <div class="div-50">
+              <label for="avatar" class="t-ubicacion">Avatar</label>
+              <input class="inputProfileEdit" type="file" size="50" name="avatar" id="avatar"
+                accept="image/jpeg,image/png" value="<%= user.avatar %> " />
+            </div>
+
+            <div>
+              <input type="submit" class="bttn" name="button-change" id="button-change" value="CAMBIAR" />
+            </div>
+          </form>
+        </article>
+      </section>
+    </div>
+    <%- include("../partials/footer")%>
+</body>
+
+</html>

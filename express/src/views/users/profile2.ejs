@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/profile2.css" />
+    <%- include("../partials/head")%>
+    <title>Detalle del producto</title>
+  </head>
+
+  <body>
+    <!-- encabezado de la pagina -->
+    <%- include("../partials/header")%>
+    <main>
+      <div class="wrap">
+        <section class="contenedor p-50">
+          <article class="conteiner">
+            <h2 class="text-mobile">
+              "Bienvenido "
+              <strong> <%=user.first_name + " " + user.last_name%> </strong>!
+            </h2>
+            <p class="text-mobile">
+              Desde tu perfil podrás administrar tus datos, revisar tus eventos
+              comprados y crear tus propios eventos
+            </p>
+            <div class="action-user" style="position: relative">
+              <h3 class="text-mobile" style="font-weight: normal">
+                Perfil de Usuario
+              </h3>
+              <a href="#">
+                <i class="fas fa-ticket-alt"></i>
+                Mis Eventos
+              </a>
+              <a href="/Usuario/Editar/<%= user.id %>">
+                <i class="fas fa-cog"></i>
+                Datos Personales
+              </a>
+              <a href="/Usuario/Cambiar/<%= user.id %>">
+                <i class="fas fa-key"></i>
+                Editar Clave
+              </a>
+              <form
+                action="/Usuario/Eliminar/<%= user.id %>?_method=DELETE"
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                <button type="submit">
+                  <i class="fas fa-ban"></i>
+                  Eliminar Cuenta
+                  <!--<button>
+                  " Eliminar Cuenta "
+                </button>-->
+                  <!-- <input type="submit" value="Eliminar usuario" /> -->
+                </button>
+              </form>
+              <a href="/Usuario/Logout">
+                <i class="fas fa-sign-out-alt"></i>
+                Cerrar sesión
+              </a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+    <!-- pie de pagina -->
+    <%- include("../partials/footer")%>
+  </body>
+</html>
